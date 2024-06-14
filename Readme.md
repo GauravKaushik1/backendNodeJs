@@ -8,6 +8,21 @@ git add .
 git branch -M main
 git remote add origin git@github.com:GauravKaushik1/gklearn.git
 git push -u origin main
+git commands
+…or create a new repository on the command line
+echo "# setup_professional_backend_project" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git checkout "v1.0.0"
+git branch -m "v1.0.0"
+git remote add origin git@github.com:GauravKaushik1/gklearn.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin git@github.com:GauravKaushik1/gklearn.git
+git branch -M main
+git push -u origin main
 
 images storage and kept temporary in the file
 make .gitkeep file to keep the temporary files in use currently
