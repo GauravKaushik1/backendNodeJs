@@ -344,3 +344,61 @@ basic overview of status codes:
 some enginnering to learn : network lag, how to optimize the data structure, os concepts
 
 make controllers for the learing logic building to make apps and how to register
+make a register function
+//steps of registering a user 
+1 get user details- which details and when which of them can be taken laterOn from frontend 
+2 validation -- just in case frontend missed it
+    *if username and email values are empty
+    *email format is correct or not (some companies even detect disposable emails)
+3 check if user already exists
+    * via email
+    * via username
+    * also provide the messages relevant
+4 required files are provided or not if 
+    * check for avtar as it is set to compulsory
+    *coverimage
+    *upload them to cloudnary if it exists
+5 create user object as mongodb has object so 
+    *create entry in db
+    *as it is response via preview so how
+    *remove password and refresh token field from the response
+    *check if awaited response of user creation if created sucessfull only then output the response else give him the response.
+6 return the results along with http status codes
+
+Use PostMan to test the app
+    *use the
+
+Login- To Dos
+1 take input data from user using the req.body
+2 allow the user to login using the username or email
+3 check if user is registered user's data is in db or not via email or username to search
+4 check the password if it does not match then give to the user error
+5 if sucessful found generate access and refresh tokens saving refresh tokens in the db
+6 send tokens through cookies or secured cookies
+make the user controller and router as well
+make the subscription controller and router
+aggregate pipeline
+    [{$match},{$lookup},{}]
+    match for criteria works like a where clause 
+    lookup 
+    [
+        {
+            $lookup: {
+                from:"authors",
+                localField: "author_id",
+                foreignField: "_id",
+                as: "author_details"
+            }
+        },
+        $addFields{//calculate and add new fields
+        author_details:{
+            $arrayElementAt: ""
+        }
+
+        }
+    ]
+    [
+        {},//first pipeline
+        {},//second pipeline
+        {}
+    ]
